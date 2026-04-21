@@ -36,4 +36,5 @@ Le site reprend les codes du logo artisanal :
 
 ---
 **Auteur :** RAHANTANIRINA Anjara - Étudiant en 1ère année à l'EPSI.
+
 **Tuteur de stage :** AOUINA Mourad Prèsident du Fournil des Frères.
