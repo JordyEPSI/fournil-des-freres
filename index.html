@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fournil des Frères | Artisan Boulanger</title>
+    <title>Fournil des Frères | Artisan Boulanger Pâtissier Montpellier</title>
     
-    <meta name="description" content="Découvrez le Fournil des Frères, artisan boulanger au 2596 Avenue de l'Europe à Montpellier.">
-
+    <meta name="description" content="Découvrez le Fournil des Frères à Montpellier. Trompe l'œil signatures, snacking frais et viennoiseries artisanales 100% fait maison.">
+    
+    <!-- AJOUT DU FAVICON ICI -->
+    <link rel="icon" type="image/jpeg" href="logo-fdf.jpg">
+    
     <link rel="stylesheet" href="style.css">
-    <!-- Importation des vraies polices Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Ajout de la classe "header-flex" pour la mise en page -->
     <header id="header">
         <div class="header-flex">
-            <h1 style="color: var(--or); font-size: 1.5rem; font-family: 'Playfair Display', serif;">Fournil des Frères</h1>
-            <nav>
-                <!-- Un peu de style en ligne temporaire pour le menu -->
-                <ul id="nav-list" style="display: flex; gap: 20px;">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#produits">Produits</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <!-- REMPLACEMENT DU TEXTE PAR L'IMAGE DU LOGO -->
+            <a href="index.html"><img src="logo-fdf.jpg" alt="Logo Fournil des Frères" class="logo"></a>
+            
+            <nav class="desktop-nav">
+                <ul id="nav-list">
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="produits.html">Nos Produits</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Ajout de la classe "hero" pour la grande image de fond -->
         <section id="accueil" class="hero">
-            <h1>L'excellence artisanale à Montpellier</h1>
-            <a href="#produits" class="btn-gold-hero">Découvrir la carte</a>
+            <h2>L'excellence artisanale à Montpellier</h2>
+            <a href="produits.html" class="btn-gold-hero">Découvrir la carte</a>
         </section>
 
-        <section id="produits" class="container section">
+        <section id="produits-phares" class="container section">
             <h2 class="title">Nos Spécialités</h2>
-            <p style="text-align: center;">Les photos de nos produits arriveront très vite !</p>
+            <div class="product-grid">
+                
+                <article class="product-card">
+                    <img src="trompe-loeil-feve-tonka.webp" alt="Fève de Tonka" loading="lazy">
+                    <div class="product-info">
+                        <h3>Trompe l'œil Tonka</h3>
+                        <p>Un dessert d'exception aux notes chaudes et vanillées.</p>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="sandwich-poulet-curry-graines.webp" alt="Sandwich Poulet Curry" loading="lazy">
+                    <div class="product-info">
+                        <h3>Le Poulet Curry</h3>
+                        <p>Baguette aux graines, émincé de poulet au curry maison.</p>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="croissant-beurre-frais-artisan.webp" alt="Croissant au Beurre" loading="lazy">
+                    <div class="product-info">
+                        <h3>Croissant au Beurre</h3>
+                        <p>Viennoiserie classique pur beurre, feuilletage artisanal.</p>
+                    </div>
+                </article>
+
+            </div>
         </section>
         
         <section id="contact" class="container section">
@@ -46,7 +73,7 @@
         </section>
     </main>
 
-    <footer style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--or);">
+    <footer>
         <p>© 2026 Fournil des Frères | Projet de stage réalisé par RAHANTANIRINA Anjara</p>
     </footer>
 
