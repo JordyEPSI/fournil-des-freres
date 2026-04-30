@@ -7,7 +7,7 @@
     
     <meta name="description" content="Découvrez le Fournil des Frères à Montpellier. Trompe l'œil signatures, snacking frais et viennoiseries artisanales 100% fait maison.">
     
-    <!-- AJOUT DU FAVICON ICI -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="logo-fdf.jpg">
     
     <link rel="stylesheet" href="style.css">
@@ -17,14 +17,17 @@
 
     <header id="header">
         <div class="header-flex">
-            <!-- REMPLACEMENT DU TEXTE PAR L'IMAGE DU LOGO -->
             <a href="index.html"><img src="logo-fdf.jpg" alt="Logo Fournil des Frères" class="logo"></a>
             
             <nav class="desktop-nav">
+                <!-- Navigation de l'Accueil -->
                 <ul id="nav-list">
-                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="#accueil" style="color:var(--or);">Accueil</a></li>
+                    <li><a href="#equipe">L'Équipe</a></li>
                     <li><a href="produits.html">Nos Produits</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#avis">Avis</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -36,10 +39,14 @@
             <a href="produits.html" class="btn-gold-hero">Découvrir la carte</a>
         </section>
 
+        <section id="equipe" class="container section">
+            <h2 class="title">L'Équipe</h2>
+            <p style="text-align: center;">Présentation de l'équipe à venir...</p>
+        </section>
+
         <section id="produits-phares" class="container section">
             <h2 class="title">Nos Spécialités</h2>
             <div class="product-grid">
-                
                 <article class="product-card">
                     <img src="trompe-loeil-feve-tonka.webp" alt="Fève de Tonka" loading="lazy">
                     <div class="product-info">
@@ -63,10 +70,19 @@
                         <p>Viennoiserie classique pur beurre, feuilletage artisanal.</p>
                     </div>
                 </article>
-
             </div>
         </section>
         
+        <section id="avis" class="container section">
+            <h2 class="title">L'Avis de nos Clients</h2>
+            <p style="text-align: center;">Système d'avis Google à venir...</p>
+        </section>
+
+        <section id="faq" class="container section">
+            <h2 class="title">Foire Aux Questions</h2>
+            <p style="text-align: center;">Questions fréquentes à venir...</p>
+        </section>
+
         <section id="contact" class="container section">
             <h2 class="title">Où nous trouver ?</h2>
             <p style="text-align: center;">2596 Avenue de l'Europe, 34080 Montpellier</p>
