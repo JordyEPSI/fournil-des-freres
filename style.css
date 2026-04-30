@@ -1,0 +1,62 @@
+/* =========================================
+   La charte graphique
+   ========================================= */
+/* Vu en cours d'inté : le :root permet de stocker nos couleurs dans des variables. 
+   Super pratique pour ne pas avoir à retaper les codes hexa partout dans le code ! 
+   Si le client veut changer le doré plus tard, on ne le change qu'ici. */
+:root {
+    --noir: #1A1A1B;
+    --or: #C5A059;
+    --creme: #FAF9F6;
+    --gris: #2D2D2E;
+    --transition: all 0.3s ease-in-out; /* Petite variable pour faire des animations fluides sur les hover plus tard */
+}
+
+/* =========================================
+   RESET CSS Pour repartir de zéro
+   ========================================= */
+/* L'étoile (*) cible TOUTES les balises. 
+   Ça enlève les marges bizarres que Google Chrome ou Firefox mettent par défaut. 
+   L'astuce du prof : le box-sizing évite que le padding casse la taille de nos boîtes (div). */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; /* Trop stylé : ça fait glisser la page doucement quand on clique sur un lien d'ancre au lieu de sauter d'un coup. */
+    font-size: 16px; /* Taille de base (1rem = 16px) */
+}
+
+/* =========================================
+   LE BODY Le fond du site
+   ========================================= */
+body { 
+    background: var(--noir); /* On appelle notre variable noire pour le fond */
+    color: var(--creme); /* Le texte sera blanc/crème par défaut pour bien ressortir */
+    font-family: Arial, sans-serif; /* Police basique du système, on mettra la vraie Google Font la semaine pro */
+}
+
+/* =========================================
+   CORRECTIONS DES BALISES DE BASE
+   ========================================= */
+/* Pour virer le trait moche bleu sous les liens cliquables */
+a { 
+    color: inherit; /* Le lien prend la couleur de son parent au lieu d'être bleu */
+    text-decoration: none; 
+    transition: var(--transition); 
+}
+
+/* Indispensable : enlève les vieux points noirs des listes à puces 
+   On en a besoin pour faire une belle barre de navigation avec le ul/li */
+ul { 
+    list-style: none; 
+}
+
+/* Les titres principaux seront directement aux couleurs de la boulangerie */
+h1, h2 { 
+    color: var(--or); 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
