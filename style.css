@@ -142,3 +142,65 @@ footer {
     margin-top: 3rem; 
     background: #111; 
 }
+
+/* =========================================
+   RESPONSIVE & ANIMATIONS
+   ========================================= */
+
+/* État initial pour l'animation d'apparition */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1.2s all ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style de la FAQ Accordéon */
+.faq-item .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: rgba(197, 160, 89, 0.05);
+}
+.faq-item.open .faq-answer {
+    max-height: 200px; /* Taille arbitraire pour l'animation */
+    padding: 15px;
+}
+.faq-item.open .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* MOBILE FIRST : Styles pour petits écrans */
+@media (max-width: 991px) {
+    .desktop-nav { display: none; } /* On cache la nav classique */
+    
+    #nav-list.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--noir);
+        padding: 20px;
+        border-bottom: 2px solid var(--or);
+        z-index: 1000;
+    }
+    
+    .hero h1 { font-size: 2.2rem; }
+}
+
+/* Styles des badges de statut */
+.status-badge {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.open { background: #27ae60; color: white; }
+.closed { background: #c0392b; color: white; }
