@@ -40,7 +40,7 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   3. COMPOSANTS (Boutons, Badges, Loader)
+   3. COMPOSANTS Boutons, Badges, Loader
    ========================================= */
 #loader {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
@@ -66,65 +66,31 @@ ul { list-style: none; }
 .btn-gold { background: var(--or); color: var(--noir); border: none; padding: 1rem; width: 100%; font-weight: bold; cursor: pointer; transition: var(--transition); border-radius: 5px;}
 .btn-gold:hover { background: white; }
 
-/* Animations JS */
+/* ANIMATIONS AU SCROLL REVEAL */
 .reveal { opacity: 0; transform: translateY(30px); transition: 1.2s all ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* =========================================
-   ANIMATIONS AU SCROLL REVEAL
-   ========================================= */
-
-/* État initial : l'élément est transparent et légèrement descendu */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: 1.2s all ease; /* Animation fluide de 1.2 secondes */
-}
-
-/* État final (ajouté par le JavaScript quand on scrolle) : l'élément apparaît à sa place */
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
-
-/* =========================================
-   ANIMATION DE LA FAQ
-   ========================================= */
-.faq-answer { 
-    display: none; /* Caché par défaut */
-    padding: 1.2rem; 
-    background: #1A1A1B; 
-    border-top: 1px solid var(--or); 
-    line-height: 1.6; 
-    animation: fade-in 0.3s ease-in-out; /* Petite animation d'apparition */
-}
-
-@keyframes fade-in {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* ANIMATION DE LA FAQ */
+.faq-answer { display: none; padding: 1.2rem; background: #1A1A1B; border-top: 1px solid var(--or); line-height: 1.6; animation: fade-in 0.3s ease-in-out; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* =========================================
    4. STRUCTURE COMMUNE (Mobile First)
    ========================================= */
 
-/* HEADER */
 header { background: rgba(26,26,27,0.98); padding: 1rem 0; border-bottom: 1px solid var(--or); position: sticky; top: 0; z-index: 1000; }
 .header-flex { display: flex; justify-content: space-between; align-items: center; }
 .logo { height: 60px; transition: var(--transition); border-radius: 50%; }
 .logo:hover { transform: scale(1.1); }
 
-/* HERO SECTION */
-.hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero h1, .hero h2 { font-size: 2.5rem; font-family: 'Playfair Display', serif; color: var(--or); text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+.hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('devanture-fournil.webp'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero h1 { font-size: 2.5rem; font-family: 'Playfair Display', serif; color: var(--or); text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
 .social-hero a { color: var(--or); font-size: 2rem; margin: 20px 15px; display: inline-block; transition: var(--transition); }
 .social-hero a:hover { transform: translateY(-8px) scale(1.1); color: white; }
 
-/* GRILLES PRODUITS ET CONTACT (S'adapte automatiquement) */
 .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
 .contact-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: start; }
 
-/* CARTES PRODUITS */
 .product-card { background: var(--gris); border-radius: 10px; overflow: hidden; transition: var(--transition); border-bottom: 3px solid var(--or); }
 .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
 .product-card img { width: 100%; height: 240px; object-fit: cover; }
@@ -132,8 +98,7 @@ header { background: rgba(26,26,27,0.98); padding: 1rem 0; border-bottom: 1px so
 .product-info h3 { color: var(--or); font-size: 1.2rem; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
 .product-info p { font-size: 0.9rem; line-height: 1.4; }
 
-/* CARTE AVIS GOOGLE */
-.google-review-card { background: #ffffff; color: #333; max-width: 600px; margin: 0 auto; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.google-review-card { background: #ffffff; color: #333; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
 .reviewer-info { display: flex; align-items: center; gap: 15px; position: relative; margin-bottom: 15px; }
 .reviewer-info .avatar { background-color: #fbbc04; color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.2rem; }
 .reviewer-info .date { font-size: 0.8rem; color: #777; }
@@ -141,14 +106,11 @@ header { background: rgba(26,26,27,0.98); padding: 1rem 0; border-bottom: 1px so
 .google-review-card .stars i { color: #fbbc04; font-size: 1rem; margin-bottom: 10px; }
 .review-text { font-style: italic; margin-bottom: 20px; font-size: 1rem; }
 
-/* FAQ */
 .faq-container { max-width: 800px; margin: auto; }
 .faq-item { border: 1px solid var(--or); margin-bottom: 15px; border-radius: 8px; overflow: hidden; }
 .faq-question { padding: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: var(--or); background: #111; transition: var(--transition); }
 .faq-question:hover { background: rgba(197, 160, 89, 0.1); }
-.faq-answer { display: none; padding: 1.2rem; background: #1A1A1B; border-top: 1px solid var(--or); line-height: 1.6; }
 
-/* FORMULAIRE & PDF */
 .contact-form h3, .contact-map h3 { color: var(--or); font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center; }
 .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; background: #111; border: 1px solid var(--or); color: white; border-radius: 5px; font-family: inherit; }
 .contact-form textarea { height: 120px; resize: vertical; }
@@ -160,58 +122,36 @@ header { background: rgba(26,26,27,0.98); padding: 1rem 0; border-bottom: 1px so
 .btn-gps { display: flex; align-items: center; justify-content: center; background: #34495e; color: white; padding: 1rem; border-radius: 8px; font-weight: bold; margin: 1rem 0; transition: var(--transition); }
 .btn-gps:hover { background: var(--or); color: var(--noir); }
 
-/* FOOTER */
 footer { text-align: center; padding: 3rem 0; border-top: 1px solid var(--or); margin-top: 40px; background: #111; }
 .footer-socials { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
 .social-circle-footer { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 2px solid var(--or); border-radius: 50%; transition: var(--transition); color: var(--or); font-size: 1.2rem; }
 .social-circle-footer:hover { background: var(--or); color: var(--noir); transform: rotate(360deg); }
 
-/* BOUTON REMONTER */
 #backToTop { position: fixed; bottom: 85px; right: 20px; background: var(--or); border: none; padding: 15px; border-radius: 50%; cursor: pointer; display: none; color: var(--noir); z-index: 1000; transition: var(--transition); font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
 #backToTop:hover { transform: scale(1.1); background: white; }
 
-
-/* =========================================
-   5. COMPORTEMENT MOBILE (Par défaut)
-   ========================================= */
-body { padding-bottom: 65px; } /* Espace pour la barre mobile en bas */
-
-.desktop-nav { display: none; } /* Cache le menu PC */
-
-/* Style du menu déroulant mobile (quand on clique sur le burger) */
+body { padding-bottom: 65px; } 
+.desktop-nav { display: none; } 
 #nav-list.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--noir); padding: 2rem; border-bottom: 2px solid var(--or); text-align: center; }
 #nav-list.active li { margin: 1rem 0; font-weight: bold; font-size: 1.2rem; }
-
 .menu-toggle { display: block; color: var(--or); font-size: 1.8rem; cursor: pointer; margin-left: auto; }
 
-/* Barre de navigation fixée en bas */
 .mobile-tab-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 65px; background: #111; border-top: 1px solid var(--or); display: flex; justify-content: space-around; align-items: center; z-index: 2000; }
 .mobile-tab-bar a { display: flex; flex-direction: column; align-items: center; font-size: 0.7rem; color: white; }
 .mobile-tab-bar a i { font-size: 1.4rem; color: var(--or); margin-bottom: 2px; }
 
-
-/* =========================================
-   6. VERSION PC (Écrans larges uniquement)
-   ========================================= */
 @media (min-width: 992px) {
-    /* 1. On annule les comportements mobile */
     body { padding-bottom: 0; }
     .mobile-tab-bar { display: none !important; }
     .menu-toggle { display: none !important; }
-    
-    /* 2. On affiche le menu PC normal */
     .desktop-nav { display: block; }
     #nav-list { display: flex; flex-direction: row; position: static; background: transparent; padding: 0; gap: 25px; border: none; }
     #nav-list li { margin: 0; }
     #nav-list a { color: var(--creme); font-weight: bold; font-size: 0.95rem; position: relative; }
     #nav-list a:hover { color: var(--or); }
-    
-    /* Petit effet de soulignement sympa sur PC */
     #nav-list a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--or); transition: 0.3s; }
     #nav-list a:hover::after { width: 100%; }
-    
-    /* 3. On ajuste les tailles pour PC */
-    .hero h1, .hero h2 { font-size: 4.5rem; }
+    .hero h1 { font-size: 4.5rem; }
     #backToTop { bottom: 30px; }
     .contact-map, .contact-form h3 { text-align: left; }
 }
