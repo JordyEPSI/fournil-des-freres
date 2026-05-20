@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStatus();
 
     // 3. MENU BURGER MOBILE
-    // On ajoute un écouteur de clic sur l'icône burger pour afficher le menu
     const burger = document.getElementById('mobile-menu');
     const nav = document.getElementById('nav-list');
     
@@ -42,12 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.toggle('active');
             burger.classList.toggle('active'); // Pour animer l'icône
         });
+
+        // AJOUT : Fermer le menu automatiquement au clic sur un lien (très important sur mobile)
+        document.querySelectorAll('#nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
     }
 
-    // 4. ANIMATIONS AU SCROLL
-    // On utilise l'API Intersection Observer ou un calcul de scroll pour faire apparaître les sections
+    // 4. ANIMATIONS AU SCROLL & BOUTON RETOUR EN HAUT
     const reveals = document.querySelectorAll('.reveal');
+    const backBtn = document.getElementById('backToTop');
+    const progressBar = document.getElementById('scroll-progress-bar');
+
     const handleScroll = () => {
+        // AJOUT : Barre de progression en haut de la page
+        if (progressBar) {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progressBar.style.width = (winScroll / height) * 100 + "%";
+        }
+
+        // Apparition des éléments (Reveal)
         reveals.forEach(el => {
             const windowHeight = window.innerHeight;
             const revealTop = el.getBoundingClientRect().top;
@@ -55,12 +72,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.classList.add('active');
             }
         });
+
+        // AJOUT : Afficher/Cacher le bouton "Retour en haut"
+        if (backBtn) {
+            backBtn.style.display = window.scrollY > 500 ? "block" : "none";
+        }
     };
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Appel initial pour les éléments déjà visibles
 
+    // AJOUT : Action de remonter la page au clic sur le bouton
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // 5. ACCORDÉON FAQ
-    // On gère l'ouverture/fermeture des questions
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
             const item = question.parentElement;
@@ -72,4 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // 6. AJOUT : NOM DU FICHIER PDF (Formulaire Contact)
+    // Permet d'afficher le nom du CV quand l'utilisateur le sélectionne
+    const fileInput = document.getElementById('file-upload');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    if (fileInput && fileNameDisplay) {
+        fileInput.addEventListener('change', (e) => {
+            const name = e.target.files[0]?.name || "Aucun fichier choisi";
+            fileNameDisplay.innerText = name;
+            fileNameDisplay.style.color = "#C5A059";
+        });
+    }
 });
