@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. LE LOADER (Écran de chargement)
+    // 1. LE LOADER
     setTimeout(() => {
         const loader = document.getElementById('loader');
         if (loader) {
@@ -9,17 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 1000);
 
-    // 2. LOGIQUE D'OUVERTURE (Status Badge)
-    // Algorithme pour afficher si la boulangerie est ouverte ou fermée en temps réel
+    // 2. LOGIQUE D'OUVERTURE
     const updateStatus = () => {
         const badge = document.getElementById('status-badge');
         if (!badge) return;
         
         const now = new Date();
         const hour = now.getHours();
-        const day = now.getDay(); // 0 = Dimanche, 6 = Samedi
+        const day = now.getDay(); 
         
-        // On définit l'heure d'ouverture selon le jour
         const openTime = (day === 0 || day === 6) ? 7 : 6; 
         
         if (hour >= openTime && hour < 20) {
@@ -39,10 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (burger && nav) {
         burger.addEventListener('click', () => {
             nav.classList.toggle('active');
-            burger.classList.toggle('active'); // Pour animer l'icône
+            burger.classList.toggle('active'); 
         });
 
-        // AJOUT : Fermer le menu automatiquement au clic sur un lien (très important sur mobile)
         document.querySelectorAll('#nav-list a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
@@ -57,14 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('scroll-progress-bar');
 
     const handleScroll = () => {
-        // AJOUT : Barre de progression en haut de la page
         if (progressBar) {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             progressBar.style.width = (winScroll / height) * 100 + "%";
         }
 
-        // Apparition des éléments (Reveal)
         reveals.forEach(el => {
             const windowHeight = window.innerHeight;
             const revealTop = el.getBoundingClientRect().top;
@@ -73,36 +68,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // AJOUT : Afficher/Cacher le bouton "Retour en haut"
         if (backBtn) {
             backBtn.style.display = window.scrollY > 500 ? "block" : "none";
         }
     };
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Appel initial pour les éléments déjà visibles
+    handleScroll(); 
 
-    // AJOUT : Action de remonter la page au clic sur le bouton
     if (backBtn) {
         backBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // 5. ACCORDÉON FAQ
+    // 5. ACCORDÉON FAQ (Réparé)
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
-            const item = question.parentElement;
-            item.classList.toggle('open');
+            const answer = question.nextElementSibling;
             
-            // On ferme les autres pour faire propre
-            document.querySelectorAll('.faq-item').forEach(otherItem => {
-                if (otherItem !== item) otherItem.classList.remove('open');
+            // Fermer toutes les autres réponses
+            document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                if (otherAnswer !== answer) {
+                    otherAnswer.style.display = 'none';
+                }
             });
+
+            // Basculer l'affichage de la réponse cliquée
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
         });
     });
 
-    // 6. AJOUT : NOM DU FICHIER PDF (Formulaire Contact)
-    // Permet d'afficher le nom du CV quand l'utilisateur le sélectionne
+    // 6. NOM DU FICHIER PDF
     const fileInput = document.getElementById('file-upload');
     const fileNameDisplay = document.getElementById('file-name-display');
     if (fileInput && fileNameDisplay) {
