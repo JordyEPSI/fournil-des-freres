@@ -71,6 +71,40 @@ ul { list-style: none; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
 /* =========================================
+   ANIMATIONS AU SCROLL REVEAL
+   ========================================= */
+
+/* État initial : l'élément est transparent et légèrement descendu */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: 1.2s all ease; /* Animation fluide de 1.2 secondes */
+}
+
+/* État final (ajouté par le JavaScript quand on scrolle) : l'élément apparaît à sa place */
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* =========================================
+   ANIMATION DE LA FAQ
+   ========================================= */
+.faq-answer { 
+    display: none; /* Caché par défaut */
+    padding: 1.2rem; 
+    background: #1A1A1B; 
+    border-top: 1px solid var(--or); 
+    line-height: 1.6; 
+    animation: fade-in 0.3s ease-in-out; /* Petite animation d'apparition */
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
    4. STRUCTURE COMMUNE (Mobile First)
    ========================================= */
 
