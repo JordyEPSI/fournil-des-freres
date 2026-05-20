@@ -40,6 +40,12 @@ ul { list-style: none; }
 }
 
 /* =========================================
+   STYLE POUR LES DEUX GRANDES CATÉGORIES ACCUEIL
+   ========================================= */
+.showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.showcase-img { height: 300px !important; }
+
+/* =========================================
    3. COMPOSANTS Boutons, Badges, Loader
    ========================================= */
 #loader {
