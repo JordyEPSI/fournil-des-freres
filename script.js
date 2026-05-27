@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     updateStatus();
 
-    // 3. MENU BURGER MOBILE
+    // 3. MENU BURGER
     const burger = document.getElementById('mobile-menu');
     const nav = document.getElementById('nav-list');
     
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. ANIMATIONS AU SCROLL & BOUTON RETOUR EN HAUT
+    // 4. ANIMATIONS AU SCROLL & Ancre
     const reveals = document.querySelectorAll('.reveal');
     const backBtn = document.getElementById('backToTop');
     const progressBar = document.getElementById('scroll-progress-bar');
@@ -81,19 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. ACCORDÉON FAQ (Réparé)
+    // 5. FAQ
     document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
             const answer = question.nextElementSibling;
             
-            // Fermer toutes les autres réponses
             document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
                 if (otherAnswer !== answer) {
                     otherAnswer.style.display = 'none';
                 }
             });
 
-            // Basculer l'affichage de la réponse cliquée
             if (answer.style.display === 'block') {
                 answer.style.display = 'none';
             } else {
