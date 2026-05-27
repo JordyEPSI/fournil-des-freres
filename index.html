@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fournil des Frères | Artisan Boulanger Pâtissier Montpellier</title>
+    
     <meta name="description" content="Découvrez le Fournil des Frères à Montpellier. Trompe l'œil signatures, snacking frais et viennoiseries artisanales 100% fait maison.">
     <link rel="icon" type="image/jpeg" href="logo-fdf.jpg">
+    
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div id="loader"><img src="logo-fdf.jpg" alt="Chargement" class="loader-logo"></div>
+    <div id="loader">
+        <img src="logo-fdf.jpg" alt="Chargement" class="loader-logo">
+    </div>
     <div id="scroll-progress-bar"></div>
 
     <header id="header">
         <div class="container header-flex">
-            <a href="index.html"><img src="logo-fdf.jpg" alt="Logo" class="logo"></a>
+            <a href="index.html"><img src="logo-fdf.jpg" alt="Logo Fournil des Frères" class="logo"></a>
+            
             <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            
             <nav class="desktop-nav">
                 <ul id="nav-list">
                     <li><a href="#accueil" style="color:var(--or);">Accueil</a></li>
@@ -43,7 +49,9 @@
         <section id="accueil" class="hero">
             <div class="hero-text">
                 <div id="status-badge" class="status-badge">Chargement...</div>
+                
                 <h1>L'excellence artisanale à Montpellier</h1>
+                
                 <div class="social-hero">
                     <a href="https://www.facebook.com/Fournil-Des-Freres-107066511878900" target="_blank"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/fournildesfreres34" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -57,44 +65,42 @@
             <h2 class="title">L'Histoire des Frères</h2>
             <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; text-align: justify;">
                 <p style="margin-bottom: 15px;">L’histoire du <strong>Fournil des Frères</strong> prend racine à Ajaccio, où trois frères grandissent avec une passion commune pour les métiers de bouche et le goût du travail bien fait.</p>
+                
                 <p style="margin-bottom: 15px;">Chacun suit alors sa propre voie pour se spécialiser :</p>
                 <ul style="margin-bottom: 15px; padding-left: 20px; list-style-type: square; color: var(--or);">
                     <li><span style="color: var(--creme);">L’un se forme et obtient son diplôme en boulangerie et viennoiserie, développant une maîtrise des pâtes et des fermentations ;</span></li>
                     <li><span style="color: var(--creme);">Le second devient pâtissier chocolatier, animé par la précision et la créativité ;</span></li>
                     <li><span style="color: var(--creme);">Tandis que le troisième se dirige vers le marketing et le management, apportant une vision stratégique et moderne du commerce.</span></li>
                 </ul>
+
                 <p style="margin-bottom: 15px;">Portés par l’envie d’entreprendre ensemble et de valoriser leur complémentarité, ils décident en 2011 de s’installer à Montpellier pour donner naissance au Fournil des Frères.</p>
-                <p style="margin-bottom: 15px;">Depuis sa création, la maison s’attache à défendre un savoir-faire artisanal authentique, en sélectionnant des matières premières de qualité et en respectant les méthodes traditionnelles. Chaque produit est pensé avec exigence, générosité et passion, afin d’offrir une expérience gourmande sincère et mémorable.</p>
+                <p style="margin-bottom: 15px;">Depuis sa création, la maison s’attache à défendre un savoir-faire artisanal authentique, en sélectionnant des matières premières de qualité et en respectant les méthodes traditionnelles. Chaque produit est gedacht avec exigence, générosité et passion, afin d’offrir une expérience gourmande sincère et mémorable.</p>
                 <p>Au fil des années, le Fournil des Frères s’est imposé comme une adresse incontournable, alliant tradition et créativité. Toujours en quête d’innovation, les trois frères revisitent les classiques de la boulangerie et de la pâtisserie, tout en restant fidèles à leurs valeurs : <strong>partage, authenticité et excellence</strong>.</p>
             </div>
         </section>
 
         <section id="produits-phares" class="container section reveal">
             <h2 class="title">Nos Spécialités</h2>
-            <div class="showcase-grid">
-                
+            <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
                 <article class="product-card reveal">
-                    <a href="produits.html" style="text-decoration: none; color: inherit;">
-                        <img src="FournilDesFrères_trompe-loeil_Hero.webp" alt="Gamme Trompe l'œil" loading="lazy" class="showcase-img">
+                    <a href="produits.html">
+                        <img src="FournilDesFrères_trompe-loeil_Hero.webp" alt="Gamme Sucrée" loading="lazy" style="height: 320px;">
                         <div class="product-info">
                             <h3>L'Art du Trompe-l'œil</h3>
                             <p>Découvrez notre collection signature d'illusions gourmandes.</p>
-                            <span style="color: var(--or); font-weight: bold; font-size: 0.9rem; display: block; margin-top: 15px;">Voir la carte ➔</span>
                         </div>
                     </a>
                 </article>
 
                 <article class="product-card reveal">
-                    <a href="produits.html" style="text-decoration: none; color: inherit;">
-                        <img src="FournilDesFrères_Sale_Hero.webp" alt="Gamme Salé et Snacking" loading="lazy" class="showcase-img">
+                    <a href="produits.html">
+                        <img src="FournilDesFrères_Sale_Hero.jpg" alt="Gamme Salée" loading="lazy" style="height: 320px;">
                         <div class="product-info">
                             <h3>Le Côté Salé & Snacking</h3>
-                            <p>Des recettes généreuses et 100% fait maison pour votre pause déjeuner.</p>
-                            <span style="color: var(--or); font-weight: bold; font-size: 0.9rem; display: block; margin-top: 15px;">Voir la carte ➔</span>
+                            <p>Des recettes généreuses et fait maison pour votre pause déjeuner.</p>
                         </div>
                     </a>
                 </article>
-
             </div>
         </section>
         
@@ -103,15 +109,15 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">Prenez-vous les commandes pour les événements ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Oui, nous réalisons des commandes sur-mesure pour vos événements. Contactez-nous directement par téléphone ou via Instagram pour discuter de votre projet.</div>
+                    <div class="faq-answer">Absolument ! Nous réalisons des commandes sur-mesure pour vos événements (anniversaires, réceptions, réunions). Pour toute demande, n'hésitez pas à nous contacter directement par téléphone ou via notre compte Instagram pour que nous puissions étudier votre projet ensemble.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Vos produits sont-ils 100% fait maison ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Oui, 100% fait maison. Tout est élaboré sur place, du feuilletage de nos viennoiseries jusqu'à nos pâtisseries signature.</div>
+                    <div class="faq-answer">Oui, sans exception. De la fabrication minutieuse du feuilletage de nos viennoiseries pur beurre à la conception complexe de nos pâtisseries en Trompe-l'œil, l'intégralité de nos gammes est élaborée sur place de manière artisanale.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Proposez-vous des offres pour certaines formules ? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Oui, nous proposons plusieurs formules déjeuner adaptées. Les tarifs et compositions varient selon les produits du jour.</div>
+                    <div class="faq-question">Proposez-vous des formules ou des offres spéciales ? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Tout à fait ! Nous proposons quotidiennement plusieurs formules de restauration adaptées pour la pause déjeuner (incluant sandwich, burger ou pizza accompagné d'une boisson et d'un dessert). Des offres groupées sont également disponibles directement en boutique selon les fabrications du jour.</div>
                 </div>
             </div>
         </section>
@@ -185,7 +191,7 @@
             <h2 class="title">CONTACT & ACCÈS</h2>
             <div class="contact-wrapper">
                 <div class="contact-form">
-                    <h3>Envoyez-nous votre CV</h3>
+                    <h3>Postuler ou nous écrire</h3>
                     <form action="https://formspree.io/f/xzdyaoab" method="POST" enctype="multipart/form-data">
                         <input type="text" name="Nom" placeholder="Votre Nom" required>
                         <input type="email" name="Email" placeholder="Votre Email" required>
@@ -204,7 +210,7 @@
                 <div class="contact-map">
                     <h3>Localisation</h3>
                     <p style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="color:var(--or); width: 20px;"></i> 2596 Avenue de l'Europe, 34080 Montpellier</p>
-                    <p style="margin-bottom: 20px;"><i class="fas fa-phone-alt" style="color:var(--or); width: 20px;"></i> <a href="tel:0652292438" style="color:var(--or); font-weight:bold;">06 52 29 24 38</a></p>
+                    <p style="margin-bottom: 20px;"><i class="fas fa-phone-alt" style="color:var(--or); width: 20px;"></i> <a href="tel:0652292438" style="color: inherit; text-decoration: none; font-weight: bold;">06 52 29 24 38</a></p>
                     
                     <a href="https://www.google.com/maps/dir/?api=1&destination=Fournil+des+Frères,+2596+Avenue+de+l'Europe,+Montpellier2" target="_blank" class="btn-gps">
                         <i class="fas fa-location-arrow" style="margin-right:8px;"></i> Itinéraire Google Maps
