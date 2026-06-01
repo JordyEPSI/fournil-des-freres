@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     updateStatus();
 
-    // 3. MENU BURGER
+    // 3. MENU BURGER 
     const burger = document.getElementById('mobile-menu');
     const nav = document.getElementById('nav-list');
     
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. ANIMATIONS AU SCROLL & Ancre
+    // 4. ANIMATIONS AU SCROLL & ANCRE
     const reveals = document.querySelectorAll('.reveal');
     const backBtn = document.getElementById('backToTop');
     const progressBar = document.getElementById('scroll-progress-bar');
